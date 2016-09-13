@@ -59,3 +59,5 @@ specified in L<Regexp::Pattern>.
 =head1 SEE ALSO
 
 L<Regexp::Pattern>
+
+L<Pod::Weaver::Plugin::Regexp::Pattern>
