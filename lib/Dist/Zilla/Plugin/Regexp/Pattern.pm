@@ -21,9 +21,9 @@ sub setup_installer {
     my $prereqs_hash = $self->zilla->prereqs->as_string_hash;
 
     # check that Regexp::Pattern is mentioned as DevelopRecommends
-    unless (exists $prereqs_hash->{develop}{recommends}{'Regexp::Pattern'}) {
+    unless (exists $prereqs_hash->{develop}{x_spec}{'Regexp::Pattern'}) {
         unless (-f "lib/Regexp/Pattern.pm") { # exception for Regexp-Pattern dist
-            $self->log_fatal(["Regexp::Pattern not specified as DevelopRecommends prerequisite"]);
+            $self->log_fatal(["Regexp::Pattern not specified as prerequisite (phase=develop, rel=x_spec)"]);
         }
     }
 }
