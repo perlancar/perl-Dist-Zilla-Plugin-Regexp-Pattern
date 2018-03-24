@@ -12,10 +12,10 @@ use namespace::autoclean;
 #use Module::Load;
 
 with (
-    'Dist::Zilla::Role::InstallTool',
+    'Dist::Zilla::Role::AfterBuild',
 );
 
-sub setup_installer {
+sub after_build {
     my $self = shift;
 
     my $prereqs_hash = $self->zilla->prereqs->as_string_hash;
@@ -48,10 +48,10 @@ currently does the following:
 
 =over
 
-=item * Make sure that L<Regexp::Pattern> is added as a DevelopRecommends prerequisite
+=item * Make sure that L<Regexp::Pattern> is added as a (phase=develop, rel=x_spec) prerequisite
 
-This is an informal way to express that the module I<follows the specification>
-specified in L<Regexp::Pattern>.
+This is a way to express that the module I<follows the specification> specified
+in L<Regexp::Pattern>.
 
 =back
 
