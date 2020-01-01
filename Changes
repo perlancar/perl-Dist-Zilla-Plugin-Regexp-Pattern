@@ -1,3 +1,8 @@
+0.005   2020-01-02  Released-By: PERLANCAR; Urgency: medium
+
+	- Use minimum version of Test::Regexp::Pattern from pmversions.
+
+
 0.004   2018-09-10  Released-By: PERLANCAR
 
 	- Create release test file to test regexp patterns using
