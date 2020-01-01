@@ -1,6 +1,8 @@
 package Dist::Zilla::Plugin::Regexp::Pattern;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -12,8 +14,9 @@ with 'Dist::Zilla::Role::AfterBuild';
 with 'Dist::Zilla::Role::FileGatherer';
 with 'Dist::Zilla::Role::PrereqSource';
 #with 'Dist::Zilla::Role::RegexpPattern::CheckDefinesPattern';
-
 use namespace::autoclean;
+
+use PMVersions::Util qw(version_from_pmversions);
 
 sub register_prereqs {
     my ($self) = @_;
@@ -25,7 +28,7 @@ sub register_prereqs {
             type  => 'requires',
             phase => 'develop',
         },
-        'Test::Regexp::Pattern' => '0.001',
+        'Test::Regexp::Pattern' => version_from_pmversions('Test::Regexp::Pattern') // '0.001',
     );
 }
 
